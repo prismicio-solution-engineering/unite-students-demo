@@ -4,7 +4,12 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomeDocumentDataSlicesSlice = never;
+type HomeDocumentDataSlicesSlice =
+  | TextAndImageSectionSlice
+  | TextBannerSlice
+  | FeaturesSectionSlice
+  | SearchSectionSlice
+  | HeroBannerSlice;
 
 /**
  * Content for Home documents
@@ -19,8 +24,7 @@ interface HomeDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<HomeDocumentDataSlicesSlice>
-  /**
+  slices: prismic.SliceZone<HomeDocumentDataSlicesSlice> /**
    * Meta Description field in *Home*
    *
    * - **Field Type**: Text
@@ -68,11 +72,366 @@ export type HomeDocument<Lang extends string = string> =
 
 export type AllDocumentTypes = HomeDocument;
 
+/**
+ * Primary content in *FeaturesSection → Items*
+ */
+export interface FeaturesSectionSliceDefaultItem {
+  /**
+   * Icon field in *FeaturesSection → Items*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features_section.items[].icon
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  icon: prismic.SelectField<"home" | "university" | "wifi" | "bus">;
+
+  /**
+   * Title field in *FeaturesSection → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features_section.items[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Description field in *FeaturesSection → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features_section.items[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+}
+
+/**
+ * Default Variation variation for FeaturesSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default variation with all fields
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturesSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<FeaturesSectionSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *FeaturesSection*
+ */
+type FeaturesSectionSliceVariation = FeaturesSectionSliceDefault;
+
+/**
+ * FeaturesSection Shared Slice
+ *
+ * - **API ID**: `features_section`
+ * - **Description**: A section displaying a list of features with icons, titles, and descriptions.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturesSectionSlice = prismic.SharedSlice<
+  "features_section",
+  FeaturesSectionSliceVariation
+>;
+
+/**
+ * Primary content in *HeroBanner → Primary*
+ */
+export interface HeroBannerSliceDefaultPrimary {
+  /**
+   * Title field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_banner.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Description field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_banner.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Button Text field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_banner.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text: prismic.KeyTextField;
+
+  /**
+   * Background Image field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_banner.primary.background_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background_image: prismic.ImageField<never>;
+}
+
+/**
+ * Default Variation variation for HeroBanner Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default variation with all fields
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroBannerSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeroBannerSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *HeroBanner*
+ */
+type HeroBannerSliceVariation = HeroBannerSliceDefault;
+
+/**
+ * HeroBanner Shared Slice
+ *
+ * - **API ID**: `hero_banner`
+ * - **Description**: A banner section with a title, description, button, and background image.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroBannerSlice = prismic.SharedSlice<
+  "hero_banner",
+  HeroBannerSliceVariation
+>;
+
+/**
+ * Primary content in *SearchSection → Primary*
+ */
+export interface SearchSectionSliceDefaultPrimary {
+  /**
+   * Title field in *SearchSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: search_section.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Placeholder Text field in *SearchSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: search_section.primary.placeholder_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  placeholder_text: prismic.KeyTextField;
+
+  /**
+   * Button Text field in *SearchSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: search_section.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text: prismic.KeyTextField;
+}
+
+/**
+ * Default Variation variation for SearchSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default variation with all fields
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SearchSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SearchSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *SearchSection*
+ */
+type SearchSectionSliceVariation = SearchSectionSliceDefault;
+
+/**
+ * SearchSection Shared Slice
+ *
+ * - **API ID**: `search_section`
+ * - **Description**: A section for search with a title, search input, and submit button.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SearchSectionSlice = prismic.SharedSlice<
+  "search_section",
+  SearchSectionSliceVariation
+>;
+
+/**
+ * Primary content in *TextAndImageSection → Primary*
+ */
+export interface TextAndImageSectionSliceDefaultPrimary {
+  /**
+   * Image field in *TextAndImageSection → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_and_image_section.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *TextAndImageSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_and_image_section.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Subtitle field in *TextAndImageSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_and_image_section.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * Description field in *TextAndImageSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_and_image_section.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Button Text field in *TextAndImageSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_and_image_section.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text: prismic.KeyTextField;
+}
+
+/**
+ * Default Variation variation for TextAndImageSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default variation with all fields
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextAndImageSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TextAndImageSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TextAndImageSection*
+ */
+type TextAndImageSectionSliceVariation = TextAndImageSectionSliceDefault;
+
+/**
+ * TextAndImageSection Shared Slice
+ *
+ * - **API ID**: `text_and_image_section`
+ * - **Description**: A section with text and image.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextAndImageSectionSlice = prismic.SharedSlice<
+  "text_and_image_section",
+  TextAndImageSectionSliceVariation
+>;
+
+/**
+ * Primary content in *TextBanner → Primary*
+ */
+export interface TextBannerSliceDefaultPrimary {
+  /**
+   * Headline field in *TextBanner → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_banner.primary.headline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headline: prismic.KeyTextField;
+
+  /**
+   * Description field in *TextBanner → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_banner.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Button Text field in *TextBanner → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_banner.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text: prismic.KeyTextField;
+}
+
+/**
+ * Default Variation variation for TextBanner Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default variation with all fields
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextBannerSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TextBannerSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TextBanner*
+ */
+type TextBannerSliceVariation = TextBannerSliceDefault;
+
+/**
+ * TextBanner Shared Slice
+ *
+ * - **API ID**: `text_banner`
+ * - **Description**: A banner with a headline, description, and call to action button.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextBannerSlice = prismic.SharedSlice<
+  "text_banner",
+  TextBannerSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
       repositoryNameOrEndpoint: string,
-      options?: prismic.ClientConfig
+      options?: prismic.ClientConfig,
     ): prismic.Client<AllDocumentTypes>;
   }
 
@@ -82,6 +441,26 @@ declare module "@prismicio/client" {
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
       AllDocumentTypes,
+      FeaturesSectionSlice,
+      FeaturesSectionSliceDefaultItem,
+      FeaturesSectionSliceVariation,
+      FeaturesSectionSliceDefault,
+      HeroBannerSlice,
+      HeroBannerSliceDefaultPrimary,
+      HeroBannerSliceVariation,
+      HeroBannerSliceDefault,
+      SearchSectionSlice,
+      SearchSectionSliceDefaultPrimary,
+      SearchSectionSliceVariation,
+      SearchSectionSliceDefault,
+      TextAndImageSectionSlice,
+      TextAndImageSectionSliceDefaultPrimary,
+      TextAndImageSectionSliceVariation,
+      TextAndImageSectionSliceDefault,
+      TextBannerSlice,
+      TextBannerSliceDefaultPrimary,
+      TextBannerSliceVariation,
+      TextBannerSliceDefault,
     };
   }
 }

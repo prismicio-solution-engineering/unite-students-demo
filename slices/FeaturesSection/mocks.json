@@ -1,0 +1,96 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Great locations"
+						}
+					],
+					[
+						"description",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Uni campuses, city centres and transport links on your doorstep"
+						}
+					],
+					[
+						"icon",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "university"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"description",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "High-speed Wi-Fi, contents insurance, electricity, heating & water – all in your fixed rent."
+						}
+					],
+					[
+						"title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "All bills included"
+						}
+					],
+					[
+						"icon",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "university"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"icon",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "bus"
+						}
+					],
+					[
+						"title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "24/7 assistance"
+						}
+					],
+					[
+						"description",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "CCTV, 24/7 staff on site and at our call centre, plus virtual support at hand"
+						}
+					]
+				]
+			}
+		]
+	}
+]

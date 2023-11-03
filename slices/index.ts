@@ -2,4 +2,10 @@
 
 import dynamic from "next/dynamic";
 
-export const components = {};
+export const components = {
+  features_section: dynamic(() => import("./FeaturesSection")),
+  hero_banner: dynamic(() => import("./HeroBanner")),
+  search_section: dynamic(() => import("./SearchSection")),
+  text_and_image_section: dynamic(() => import("./TextAndImageSection")),
+  text_banner: dynamic(() => import("./TextBanner")),
+};

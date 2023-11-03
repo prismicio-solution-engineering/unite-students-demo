@@ -9,7 +9,9 @@ module.exports = {
     './generator/slices/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {fontFamily: {
+      'lato': ['lato', 'sans-serif']
+    },},
   },
   plugins: [],
 }

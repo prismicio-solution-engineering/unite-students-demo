@@ -1,0 +1,21 @@
+{
+  "id": "search_section",
+  "type": "SharedSlice",
+  "name": "SearchSection",
+  "description": "A section for search with a title, search input, and submit button.",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default Variation",
+      "description": "Default variation with all fields",
+      "primary": {
+        "title": {"type": "Text", "config": {"label": "Title"}},
+        "placeholder_text": {"type": "Text", "config": {"label": "Placeholder Text"}},
+        "button_text": {"type": "Text", "config": {"label": "Button Text"}}
+      },
+      "docURL": "...",
+      "version": "initial",
+      "imageUrl": ""
+    }
+  ]
+}

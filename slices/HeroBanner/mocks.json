@@ -1,0 +1,44 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "You wouldn’t wait until the pizza box is empty to grab a slice\n"
+			},
+			"description": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "So why wait to book your home for 2024/25? Make like the early bird to get the best choice of rooms."
+			},
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Find your student home now"
+			},
+			"background_image": {
+				"__TYPE__": "ImageContent",
+				"url": "https://images.unsplash.com/photo-1622455331494-966b1b4eda44?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw1fHxmcmllbmRzJTIwcGl6emF8ZW58MHx8fHwxNjk5MDAzNjg4fDA&ixlib=rb-4.0.3&q=85",
+				"origin": {
+					"id": "ObkUzac2QpQ",
+					"url": "https://images.unsplash.com/photo-1622455331494-966b1b4eda44?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw1fHxmcmllbmRzJTIwcGl6emF8ZW58MHx8fHwxNjk5MDAzNjg4fDA&ixlib=rb-4.0.3&q=85",
+					"width": 4525,
+					"height": 3017
+				},
+				"width": 4525,
+				"height": 3017,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					}
+				}
+			}
+		},
+		"items": []
+	}
+]

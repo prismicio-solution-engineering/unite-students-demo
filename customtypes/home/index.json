@@ -10,7 +10,23 @@
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {}
+          "choices": {
+            "text_and_image_section": {
+              "type": "SharedSlice"
+            },
+            "text_banner": {
+              "type": "SharedSlice"
+            },
+            "features_section": {
+              "type": "SharedSlice"
+            },
+            "search_section": {
+              "type": "SharedSlice"
+            },
+            "hero_banner": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     },

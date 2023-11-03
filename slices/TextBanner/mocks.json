@@ -1,0 +1,24 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"headline": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Book early for 2024/25 to get the best choice of our rooms, flats and studios."
+			},
+			"description": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Enjoy great locations, all utility bills included in your fixed rent, free high-speed Wi-Fi and contents insurance, plus staff on-site 24/7."
+			},
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Book now"
+			}
+		},
+		"items": []
+	}
+]

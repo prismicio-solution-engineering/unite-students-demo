@@ -1,0 +1,43 @@
+{
+  "id": "features_section",
+  "type": "SharedSlice",
+  "name": "FeaturesSection",
+  "description": "A section displaying a list of features with icons, titles, and descriptions.",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default Variation",
+      "description": "Default variation with all fields",
+      "items": {
+        "icon": {
+          "type": "Select",
+          "config": {
+            "label": "Icon",
+            "options": [
+              "home",
+              "university",
+              "wifi",
+              "bus"
+            ]
+          }
+        },
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title"
+          }
+        },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "Description"
+          }
+        }
+      },
+      "docURL": "...",
+      "version": "initial",
+      "imageUrl": "",
+      "primary": {}
+    }
+  ]
+}

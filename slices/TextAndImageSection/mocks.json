@@ -1,0 +1,49 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"image": {
+				"__TYPE__": "ImageContent",
+				"url": "https://images.unsplash.com/photo-1552242718-c5360894aecd?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyOXx8cm9vbXxlbnwwfHx8fDE2OTkwMjc1NjV8MA&ixlib=rb-4.0.3&q=85",
+				"origin": {
+					"id": "GmRiN7tVW1w",
+					"url": "https://images.unsplash.com/photo-1552242718-c5360894aecd?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyOXx8cm9vbXxlbnwwfHx8fDE2OTkwMjc1NjV8MA&ixlib=rb-4.0.3&q=85",
+					"width": 3264,
+					"height": 2176
+				},
+				"width": 3264,
+				"height": 2176,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					}
+				}
+			},
+			"title": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "LOOK BEFORE YOU BOOK"
+			},
+			"subtitle": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Want to get a feel of where you’re going to live?"
+			},
+			"description": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Find your favourite property and book a viewing, or take a look round a 360° virtual tour from the comfort of your home!"
+			},
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Browse MyPerks"
+			}
+		},
+		"items": []
+	}
+]

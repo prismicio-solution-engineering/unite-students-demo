@@ -1,0 +1,23 @@
+{
+  "id": "text_and_image_section",
+  "type": "SharedSlice",
+  "name": "TextAndImageSection",
+  "description": "A section with text and image.",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default Variation",
+      "description": "Default variation with all fields",
+      "primary": {
+        "image": {"type": "Image", "config": {"label": "Image"}},
+        "title": {"type": "Text", "config": {"label": "Title"}},
+        "subtitle": {"type": "Text", "config": {"label": "Subtitle"}},
+        "description": {"type": "Text", "config": {"label": "Description"}},
+        "button_text": {"type": "Text", "config": {"label": "Button Text"}}
+      },
+      "docURL": "...",
+      "version": "initial",
+      "imageUrl": ""
+    }
+  ]
+}

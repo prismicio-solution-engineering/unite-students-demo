@@ -1,0 +1,37 @@
+{
+  "id": "text_banner",
+  "type": "SharedSlice",
+  "name": "TextBanner",
+  "description": "A banner with a headline, description, and call to action button.",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default Variation",
+      "description": "Default variation with all fields",
+      "primary": {
+        "headline": {
+          "type": "Text",
+          "config": {
+            "label": "Headline"
+          }
+        },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "Description"
+          }
+        },
+        "button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Button Text"
+          }
+        }
+      },
+      "docURL": "...",
+      "version": "initial",
+      "imageUrl": "",
+      "items": {}
+    }
+  ]
+}
